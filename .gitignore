@@ -1,0 +1,8 @@
+.env
+__pycache__/
+*.py[cod]
+*.log
+state.json
+state.json.tmp
+*.backup*
+.venv/

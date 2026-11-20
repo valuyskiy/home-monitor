@@ -1,0 +1,21 @@
+[Unit]
+Description=Home Network and Home Assistant Monitor
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=simple
+User=homemonitor
+Group=homemonitor
+WorkingDirectory=/opt/home-monitor
+ExecStart=/usr/bin/python3 -u /opt/home-monitor/monitor.py
+Restart=always
+RestartSec=5
+UMask=0077
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/home-monitor
+
+[Install]
+WantedBy=multi-user.target

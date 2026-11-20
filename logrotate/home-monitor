@@ -1,0 +1,10 @@
+/opt/home-monitor/monitor.log {
+    daily
+    rotate 7
+    missingok
+    notifempty
+    compress
+    delaycompress
+    copytruncate
+    su homemonitor homemonitor
+}
